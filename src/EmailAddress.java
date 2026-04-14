@@ -27,7 +27,7 @@ public class EmailAddress {
     }
 
     // getter method for date
-    public String date() {
+    public String getDate() {
         return date;
     }
 
