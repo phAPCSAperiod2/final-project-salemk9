@@ -1,5 +1,6 @@
 
-/** This class, EmailOrganizer, which categorize each of the email addresses
+/**
+ * This class, EmailOrganizer, which categorize each of the email addresses
  * into their respective categories using ArrayLists and 2D arrays.
  * Author: Salem Kiar
  * Date: 4/14/26
@@ -12,14 +13,17 @@ public class EmailOrganizer {
     private ArrayList<String> promotion;
     private String[][] dates;
 
-
     // constructor
     public EmailOrganizer() {
-        this.education = new ArrayList<String>;
-        this.people = new ArrayList<String>;
-        this.promotion = new ArrayList<String>;
-        this.dates
+        this.education = new ArrayList<>();
+        this.people = new ArrayList<>();
+        this.promotion = new ArrayList<>();
 
+
+    }
+
+    public ArrayList<String> emailOrganizer() {
+        
 
     }
 
