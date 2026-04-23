@@ -11,6 +11,7 @@ public class EmailOrganizer {
     private ArrayList<String> education;
     private ArrayList<String> people;
     private ArrayList<String> promotion;
+    private ArrayList<EmailAddress> emails;
     private String[][] dates;
 
     // constructor
@@ -18,12 +19,32 @@ public class EmailOrganizer {
         this.education = new ArrayList<>();
         this.people = new ArrayList<>();
         this.promotion = new ArrayList<>();
-
+        dates = new String();
 
     }
 
-    public ArrayList<String> emailOrganizer() {
-        
+    public ArrayList<String> emailOrganizer(ArrayList education) {
+        for (int i = 0; i < education.size(); i++) {
+            if (emails.get(i).substring(i,i+4).equals(".edu") )
+            {
+                education.add(emails.get(i));
+            }
+
+            if (emails.get(i).substring(i,i+9).equals("classroom"))
+            {
+                people.add(emails.get(i));
+            }
+            else
+            {
+                
+            }
+
+        }
+
+    }
+
+    public String organizeDates()
+    {
 
     }
 

@@ -13,11 +13,14 @@ public class EmailAddress {
     // declare instance variables name and date
     private String name;
     private String date;
+    private ArrayList<String> emailAddresses;
+
 
     // create constructor for EmailAddress and initialize name and date
     public EmailAddress(String theName, String theDate) {
         name = theName;
         date = theDate;
+        emailAddresses = new ArrayList<String>();
 
     }
 
@@ -34,6 +37,11 @@ public class EmailAddress {
     // method for formatted string
     public String toString() {
         return "Email name: " + name + " at " + date;
+    }
+
+    public ArrayList<String> addEmails(String emailAddress)
+    {
+        return emailAddresses.add(emaiLAddress);
     }
 
 }
