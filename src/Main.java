@@ -5,6 +5,8 @@ public class Main {
         System.out.println(email.getName());
         System.out.println(email.getDate());
 
+        
+
 
 
     }
