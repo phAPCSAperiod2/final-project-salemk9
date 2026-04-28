@@ -102,4 +102,15 @@ public class EmailOrganizer {
 
     }
 
+    public void sortbyUserInput(String input)
+    {
+        Scanner scan = new Scanner(System.in);
+        String inputs = scan.next();
+
+        
+
+    }
+
+
+
 }
