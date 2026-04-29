@@ -102,14 +102,36 @@ public class EmailOrganizer {
 
     }
 
-    public void sortbyUserInput(String input)
+    public void sortbyUserInput(Email e)
     {
         Scanner scan = new Scanner(System.in);
+        Systen.out.println("Type any giveaways you see from education related emails");
         String inputs = scan.next();
 
-        
+        // if the email has edu or assignment, add the email to the education ArrayList
+        if (sender.contains(input) || subject.contains(input)) {
+            e.setCategory("Education");
+            education.add(e);
+        }
+
+        Systen.out.println("Type any giveaways you see from people related emails");
+        String supalongname = scan.next();
+        // if the email has teacher or class, add the email to the people ArrayList
+        if (sender.contains(supalongname) || subject.contains(supalongname)) {
+            e.setCategory("People");
+            people.add(e);
+        }
+
+        // else, add the email to the promotion ArrayList
+        else {
+            e.setCategory("Promotion");
+            promotion.add(e);
+        }
 
     }
+
+
+
 
 
 
