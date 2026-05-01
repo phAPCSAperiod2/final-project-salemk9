@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "final-project-salemk9_b7a1a307"
+    },
+    {
+      "type": "java",
       "name": "Tester",
       "request": "launch",
       "mainClass": "Tester",

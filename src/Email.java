@@ -20,7 +20,7 @@ public class Email {
 
 
     // create constructor for EmailAddress and initialize
-    public EmailAddress(String theSender, String theSubject, String theContent, int theMonth, int theDay) {
+    public Email(String theSender, String theSubject, String theContent, int theMonth, int theDay) {
         sender = theSender;
         subject = theSubject;
         content = theContent;

@@ -9,130 +9,113 @@ import java.util.ArrayList;
 public class EmailOrganizer {
 
     // declare instance variables
-    private ArrayList<Email>[][] calendar;
+    private Email[][] calendar;
 
     private ArrayList<Email> education;
     private ArrayList<Email> people;
     private ArrayList<Email> promotion;
 
+    private ArrayList<String> eduKeywords;
+    private ArrayList<String> peopleKeywords;
+    private ArrayList<String> promoKeywords;
+
     // create constructor for EmailOrganizer and create empty calendar
     public EmailOrganizer() {
-        calendar = new ArrayList[12][31];
-
-        for (int month = 0; i < 12; month++) {
-            for (int days = 0; i < 31; days++) {
-                calendar[month][days] = new ArrayList<Email>();
-            }
-        }
+        calendar = new Email[12][31];
 
         education = new ArrayList<>();
         people = new ArrayList<>();
         promotion = new ArrayList<>();
 
+        eduKeywords = new ArrayList<>();
+        peopleKeywords = new ArrayList<>();
+        promoKeywords = new ArrayList<>();
+
     }
 
+    public void addEducationKeyword(String word)
+    {
+        eduKeywords.add(word.toLowerCase());
+    }
+
+    public void addPeopleKeyword(String word)
+    {
+        peopleKeywords.add(word.toLowerCase());
+    }
+
+    public void addPromoKeyword(String word)
+    {
+        promoKeywords.add(word.toLowerCase());
+    }
     // method that adds emails to appropriate date on calendar
     public void addEmail(Email e) {
 
         categorizeEmail(e);
-        calendar[e.getMonth()][e.getDay()].add(e);
+        calendar[e.getMonth()][e.getDay()] = e;
 
     }
 
     // method that categorizes emails into ArrayList categories
     private void categorizeEmail(Email e) {
-        String subject = e.getSubject().toLowerCase();
-        String sender = e.getSender().toLowerCase();
 
-        // if the email has edu or assignment, add the email to the education ArrayList
-        if (sender.contains(".edu") || subject.contains("assignment")) {
-            e.setCategory("Education");
-            education.add(e);
+        String text = (e.getSubject() + " " + e.getSender().toLowerCase());
+
+        for (String word : eduKeywords)
+        {
+            if (text.contains(word))
+            {
+                e.setCategory("Education");
+                education.add(e);
+                return;
+            }
         }
 
-        // if the email has teacher or class, add the email to the people ArrayList
-        else if (sender.contains("teacher") || subject.contains("class")) {
-            e.setCategory("People");
-            people.add(e);
+        for (String word : peopleKeywords)
+        {
+            if (text.contains(word))
+            {
+                e.setCategory("People");
+                people.add(e);
+                return;
+            }
         }
 
-        // else, add the email to the promotion ArrayList
-        else {
-            e.setCategory("Promotion");
-            promotion.add(e);
+        for (String word : promoKeywords)
+        {
+            if (text.contains(word))
+            {
+                e.setCategory("Promotion");
+                promotion.add(e);
+                return;
+            }
         }
+
+        e.setCategory("Other");
+
     }
 
     // method that prints all emails in calendar.
     public void printAllEmails() {
         // loop through months
-        for (int month = 0; i < 12; month++) {
+        for (int month = 0; month < 12; month++) {
             // loop through days
-            for (int days = 0; j < 31; days++) {
+            for (int days = 0; days < 31; days++) {
                 // print all emails
-                for (Email e : calendar[month][days]) {
-                    System.out.println(e);
+                if (calendar[month][days] != null) {
+                    System.out.println(calendar[month][days]);
                 }
             }
         }
     }
 
-    // method that prints emails on certain days.
     public void printEmailsOn(int month, int day) {
-        for (Email e : calendar[month][day]) {
-            System.out.println(e);
+        if (calendar[month][day] != null) {
+            System.out.println(calendar[month][day]);
         }
-    }
-
-    // prints all emails based on each category
-    public void printByCategory(String category) {
-        ArrayList<Email> list;
-
-        if (category.equalsIgnoreCase("education")) {
-            list = education;
-        } else if (category.equalsIgnoreCase("people")) {
-            list = people;
-        } else {
-            list = promotion;
-        }
-
-        for (Email e : list) {
-            System.out.println(e);
-        }
-
-    }
-
-    public void sortbyUserInput(Email e)
-    {
-        Scanner scan = new Scanner(System.in);
-        Systen.out.println("Type any giveaways you see from education related emails");
-        String inputs = scan.next();
-
-        // if the email has edu or assignment, add the email to the education ArrayList
-        if (sender.contains(input) || subject.contains(input)) {
-            e.setCategory("Education");
-            education.add(e);
-        }
-
-        Systen.out.println("Type any giveaways you see from people related emails");
-        String supalongname = scan.next();
-        // if the email has teacher or class, add the email to the people ArrayList
-        if (sender.contains(supalongname) || subject.contains(supalongname)) {
-            e.setCategory("People");
-            people.add(e);
-        }
-
-        // else, add the email to the promotion ArrayList
         else {
-            e.setCategory("Promotion");
-            promotion.add(e);
+            System.out.println("No email on this date.");
         }
-
     }
-
-
-
-
 
 
 }
