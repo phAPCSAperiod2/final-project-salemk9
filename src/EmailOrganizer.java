@@ -21,8 +21,11 @@ public class EmailOrganizer {
 
     // create constructor for EmailOrganizer and create empty calendar
     public EmailOrganizer() {
+
+        // initialze 2D array calendar
         calendar = new Email[12][31];
 
+        // initialize ArrayLists
         education = new ArrayList<>();
         people = new ArrayList<>();
         promotion = new ArrayList<>();
@@ -33,20 +36,24 @@ public class EmailOrganizer {
 
     }
 
+    // methods for adding education keywords
     public void addEducationKeyword(String word)
     {
         eduKeywords.add(word.toLowerCase());
     }
 
+    // methods for adding education keywords
     public void addPeopleKeyword(String word)
     {
         peopleKeywords.add(word.toLowerCase());
     }
 
+    // methods for adding education keywords
     public void addPromoKeyword(String word)
     {
         promoKeywords.add(word.toLowerCase());
     }
+
     // method that adds emails to appropriate date on calendar
     public void addEmail(Email e) {
 
@@ -58,8 +65,10 @@ public class EmailOrganizer {
     // method that categorizes emails into ArrayList categories
     private void categorizeEmail(Email e) {
 
+        // create variables that contains the email's subject and sender
         String text = (e.getSubject() + " " + e.getSender().toLowerCase());
 
+        // iterate through education keywords and see if sender/subject has it, if so add it to education category
         for (String word : eduKeywords)
         {
             if (text.contains(word))
@@ -70,6 +79,7 @@ public class EmailOrganizer {
             }
         }
 
+        // iterate through education keywords and see if sender/subject has it, if so add it to people category
         for (String word : peopleKeywords)
         {
             if (text.contains(word))
@@ -80,6 +90,7 @@ public class EmailOrganizer {
             }
         }
 
+        // iterate through education keywords and see if sender/subject has it, if so add it to promotion category
         for (String word : promoKeywords)
         {
             if (text.contains(word))
@@ -90,6 +101,7 @@ public class EmailOrganizer {
             }
         }
 
+        // if not found, set category to other
         e.setCategory("Other");
 
     }
@@ -108,10 +120,13 @@ public class EmailOrganizer {
         }
     }
 
+    // method that prints all the Emails on a certain month/day
     public void printEmailsOn(int month, int day) {
+        // checks if there is an email on that day and prints it out if so
         if (calendar[month][day] != null) {
             System.out.println(calendar[month][day]);
         }
+        // If not, notify user that there is no email on that date
         else {
             System.out.println("No email on this date.");
         }

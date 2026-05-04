@@ -1,3 +1,11 @@
+/**
+*
+* This class, Main, creates the menu for the user to view and add emails.
+* It also includes a while loop that encompasses the logic for the program to run smoothly.
+* Author: Salem Kiar
+* Date: 4/13/26
+*
+**/
 import java.util.Scanner;
 
 public class Main {
@@ -11,6 +19,7 @@ public class Main {
         boolean running = true;
 
         while (running) {
+            // Give user options for what they want to do
             System.out.println("\n Email Organizer Menu");
             System.out.println("1. Add keyword");
             System.out.println("2. Add email (Tip: add ALL keywords before you enter an email) ");
@@ -19,16 +28,20 @@ public class Main {
             System.out.println("5. Exit");
             System.out.println("Choose an option: ");
 
+            // Look for user input based on the number they chose
             int choice = input.nextInt();
             input.nextLine();
 
             if (choice == 1) {
+
+                // Ask user for category of keyword and assign it to category
                 System.out.println("Enter category (education/people/promotion): ");
                 String category = input.nextLine();
 
                 System.out.println("Enter keyword: ");
                 String keyword = input.nextLine();
 
+                // Add keyword to correct category based on what the user inputted
                 if (category.equalsIgnoreCase("education")) {
                     organizer.addEducationKeyword(keyword);
                 }
@@ -44,6 +57,9 @@ public class Main {
             }
 
             else if (choice == 2) {
+
+                // Let the create a new email, and ask them for the sender, subject, content, month, and day
+                // Assign the input to the appropriate variables
                 System.out.print("Sender: ");
                 String sender = input.nextLine();
 
@@ -60,15 +76,18 @@ public class Main {
                 int day = input.nextInt() - 1;
                 input.nextLine();
 
+                // Create new email object based on the user inputs
                 Email email = new Email(sender, subject, content, month, day);
                 organizer.addEmail(email);
             }
 
             else if (choice == 3) {
+                // print all emails inputted by the user
                 organizer.printAllEmails();
             }
 
             else if (choice == 4) {
+                // determine which month and day the user wants
                 System.out.print("Month (1-12): ");
                 int month = input.nextInt() - 1;
 
@@ -76,6 +95,7 @@ public class Main {
                 int day = input.nextInt() - 1;
                 input.nextLine();
 
+                // print all the emails of that month and day
                 organizer.printEmailsOn(month, day);
             }
 
@@ -84,6 +104,7 @@ public class Main {
             }
 
         }
+        // close input
         input.close();
     }
 
