@@ -1,6 +1,5 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23509035)
 # AP Computer Science A – Final Project
-## Software & Systems Development Capstone
 
 ## 🔹 Project Title
 Email Organizer Program
@@ -21,11 +20,12 @@ Brief description of:
 - Key data structures
 - Program logic
 
+The first class that I made was my Email class, which provides the template for the user to create an Email object including the sender, subject, date it was sent, and content. It also includes getter and setter methods so that the program can access different aspects of the email. My next class is my EmailOrganizer class, which includes the ArrayLists for categories and keywords and methods that will organize the Email objects into these ArrayLists. Lastly, I have my Main class, which creates a menu for which the user can enter what they want to do with the program, including adding keywords, adding emails, and viewing the emails in chronological order. 
+
 ## 🔹 Class Diagram
 (https://drive.google.com/file/d/1wh2fID8p1zTPeZJJPSucZO0WaQYBr2cs/view?usp=sharing)
 
 ## 🔹 Known Limitations / Future Improvements
-What works well, and what you would improve with more time.
 One of the known limitations of my program is that the user must input all keywords that they plan to use before entering any emails. This is because the for loop traverses
 through the array of keywords, and if the keywords aren't present, the email is categorized as "other" even though it should not be.
 ---
