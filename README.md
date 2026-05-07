@@ -2,163 +2,18 @@
 # AP Computer Science A – Final Project
 ## Software & Systems Development Capstone
 
-Welcome to your **Final Project repository**.
-
-This repository will hold:
-- Your complete Java project
-- Your project journal and planning artifacts
-- Your final, working software product
-
-This is not just an assignment — it is a **capstone software project**.
-
----
-
-## 📌 Project Overview (Read Carefully)
-
-In this project, you will:
-- Design and build a **real piece of software**
-- Solve **one real problem** for **one clearly defined user**
-- Work using **agile development**
-- Show evidence of **professional software practices**
-- Use AI responsibly as a planning and support tool
-
-You will leave this course with something you can confidently say:
-
-> “I built this software.”
-
----
-
-## 🔁 Required Workflow (How You Must Work)
-
-### ✅ Daily GitHub Commits (Required)
-You are expected to:
-- Make **at least one meaningful commit every class day**
-- Write **descriptive commit messages** that explain:
-  - What you changed
-  - Why you changed it
-  - What goal it supports
-
-✅ Good commit messages:
-- `Sprint 1: Created Player class and tested constructor`
-- `Sprint 2: Implemented 2D map and verified movement logic`
-
-🚫 Poor commit messages:
-- `updates`
-- `stuff`
-- `final version`
-
-Your commit history is **evidence of your thinking and progress**.
-
----
-
-## 🔁 Agile Development & Sprints
-
-You will complete **4 sprints**.  
-Each sprint includes:
-- Planning
-- Building
-- Testing
-- Feedback and reflection
-
-Each sprint ends with:
-- A sprint grade
-- A sprint reflection
-- Feedback exchanged with peers
-
-🚫 You may NOT complete multiple sprints at once.  
-✅ Each sprint grade is **final**.
-
----
-
-## 🧪 Testing Expectations
-
-Testing is required every sprint.
-
-✅ Testing may include:
-- Running the program with different inputs
-- Print‑based testing
-- Driver program testing
-- Verifying logic and edge cases
-
-You should be able to explain:
-- What you tested
-- How you tested it
-- What you discovered or fixed
-
----
-
-## 🗂️ Required Project Components
-
-Your final project must include:
-
-- ✅ Multiple interacting Java classes
-- ✅ Encapsulation (`private` fields, appropriate getters/setters)
-- ✅ Arrays and/or ArrayLists
-- ✅ A purposeful **2D array**
-- ✅ A working driver program (`main`)
-- ✅ A class diagram matching your final code
-- ✅ Clear documentation
-- ✅ A program that runs and works
-
-Inheritance and interfaces are optional but encouraged.
-
----
-
-## 🤖 Using AI (Allowed, With Responsibility)
-
-You may use AI to:
-- Organize ideas
-- Plan sprints
-- Debug code
-- Suggest design improvements
-
-You must:
-- Document how you used AI
-- Review and evaluate AI suggestions
-- Understand and explain your final code
-
-AI should act like:
-> A junior developer you supervise — not something that builds the project for you.
-
----
-
-## 📘 Project Journal
-
-All planning, work logs, testing notes, and reflections live in **your project journal**.
-
-If it happened during this project, it should be documented there.
-
----
-
-## ✅ Final Submission Expectations
-
-By the end of the project:
-- Your program should run reliably
-- Your technical requirements should be met
-- Your code should be readable and organized
-- Your repository should look **professional**
-
----
-
-# ✨ Final Step: README Update (Very Important)
-
-When your project is complete, you must **rewrite this README**  
-so it reflects **your software**, not the assignment.
-
-Your final README should include:
-
----
-
 ## 🔹 Project Title
+Email Organizer Program
 
 ## 🔹 What This Software Does
-Explain your project in plain language.
+This project categroizes the emails inputted by the user into three categories, including education, people, and promotion. The program categorizes these emails
+based on keywords found (which can also be found), the sender or subject of the email, and the date the email was sent.
 
 ## 🔹 Who It’s For
-Describe the user and the problem being solved.
+The program is mainly geared towards high school or college students who have trouble organizing their email and do not have the time to decide which ones are important or not. This is important and matters because the user can miss out on emails that have important information in them, making the user miss out on opportunities that they would have otherwise taken if they were told.
 
 ## 🔹 How to Run the Program
-Clear steps so someone else can run your project.
+In order to run my program, the user has to choose one of the options that are provided from the menu and write the corresponding number. Then, based on what they choose, they can input certain emails and keywords based on what the user wants. After inputting all the keywords and emails that they wanted to, the user can view all the emails by date and see the categories that they correspond to.
 
 ## 🔹 Technical Overview
 Brief description of:
@@ -167,23 +22,10 @@ Brief description of:
 - Program logic
 
 ## 🔹 Class Diagram
-Include or link your final class diagram.
+(https://drive.google.com/file/d/1wh2fID8p1zTPeZJJPSucZO0WaQYBr2cs/view?usp=sharing)
 
 ## 🔹 Known Limitations / Future Improvements
 What works well, and what you would improve with more time.
-
+One of the known limitations of my program is that the user must input all keywords that they plan to use before entering any emails. This is because the for loop traverses
+through the array of keywords, and if the keywords aren't present, the email is categorized as "other" even though it should not be.
 ---
-
-## 🎯 Final Reminder
-
-This repository represents **you as a developer**.
-
-Take pride in:
-- Your process
-- Your commits
-- Your code
-- Your documentation
-
-Build something real.  
-Build it thoughtfully.  
-Build it well.
