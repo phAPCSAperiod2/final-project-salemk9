@@ -5,7 +5,7 @@
 
 ## 🔹 What This Software Does
 This project categorizes the emails inputted by the user into three categories, including education, people, and promotion. The program categorizes these emails
-based on keywords found (which can also be found), the sender or subject of the email, and the date the email was sent.
+based on keywords found (which can also be inputted by the user), the sender or subject of the email, and the date the email was sent.
 
 ## 🔹 Who It’s For
 The program is mainly geared towards high school or college students who have trouble organizing their email and do not have the time to decide which ones are important or not. This is important and matters because the user can miss out on emails that have important information in them, making the user miss out on opportunities that they would have otherwise taken if they were told.
